@@ -31,62 +31,57 @@ CLXDTC
 const multipleOf3 = (num) => num % 3 === 0;
 const multipleOf5 = (num) => num % 5 === 0;
 
-// while (i < n) {
-// 	// if (multipleOf3(i) && multipleOf5(i)) {
-// 	// 	console.log('CLXDTC');
-// 	// } else if (multipleOf3(i)) {
-// 	// 	console.log('CLX');
-// 	// } else if (multipleOf5(i)) {
-// 	// 	console.log('DTC');
-// 	// } else {
-// 	// 	console.log(i);
-//    // }
-   
-//    switch (true) {
-//       case multipleOf3(i) && multipleOf5(i):
-//       console.log('CLXDTC');
-//       break;
+function replaceNums(start, end) {
+	let i = start;
 
-//       case multipleOf3(i):
-//       console.log('CLX');
-//       break;
+	while (i <= end) {
+		switch (true) {
+			case multipleOf3(i) && multipleOf5(i):
+				console.log('CLXDTC');
+				break;
 
-//       case multipleOf5(i):
-//       console.log('DTC');
-//       break;
+			case multipleOf3(i):
+				console.log('CLX');
+				break;
 
-//       default:
-//       console.log(i);
-//    }
+			case multipleOf5(i):
+				console.log('DTC');
+				break;
 
-// 	i++;
-// }
+			default:
+				console.log(i);
+		}
 
-function replaceNums(start, end) { 
-   let i = start;
-
-   while (i <= end) {
-      switch (true) {
-         case multipleOf3(i) && multipleOf5(i):
-         console.log('CLXDTC');
-         break;
-
-         case multipleOf3(i):
-         console.log('CLX');
-         break;
-
-         case multipleOf5(i):
-         console.log('DTC');
-         break;
-
-         default:
-         console.log(i);
-      }
-
-      i++;
-   }
+		i++;
+	}
 }
 
 console.time('replaceNums');
 replaceNums(1, 100);
 console.timeEnd('replaceNums');
+
+
+console.time('Solution #2');
+
+const nums = Array.from({ length: 100 }, (v, i) => i + 1);
+// console.log(nums);
+
+for (const val of nums) {
+	switch (true) {
+		case multipleOf3(val) && multipleOf5(val):
+			console.log('CLXDTC');
+			break;
+
+		case multipleOf3(val):
+			console.log('CLX');
+			break;
+
+		case multipleOf5(val):
+			console.log('DTC');
+			break;
+
+		default:
+			console.log(val);
+	}
+}
+console.timeEnd('Solution #2');
