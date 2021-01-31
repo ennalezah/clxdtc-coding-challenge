@@ -31,10 +31,12 @@ CLXDTC
 let i = 1;
 const n = 16;
 
+const multipleOf3 = num => i % 3 === 0;
+
 while (i < n) {
-   if (i % 3 === 0 && i % 5===0) {
+   if (multipleOf3(i) && i % 5===0) {
       console.log("CLXDTC")
-   } else if(i % 3 === 0) {
+   } else if(multipleOf3(i)) {
       console.log("CLX")
    } else if(i % 5 === 0) {
       console.log("DTC")
