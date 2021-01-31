@@ -31,14 +31,15 @@ CLXDTC
 let i = 1;
 const n = 16;
 
-const multipleOf3 = num => i % 3 === 0;
+const multipleOf3 = num => num % 3 === 0;
+const multipleOf5 = num => num % 5 === 0;
 
 while (i < n) {
-   if (multipleOf3(i) && i % 5===0) {
+   if (multipleOf3(i) && multipleOf5(i)) {
       console.log("CLXDTC")
    } else if(multipleOf3(i)) {
       console.log("CLX")
-   } else if(i % 5 === 0) {
+   } else if(multipleOf5(i)) {
       console.log("DTC")
    } else {
       console.log(i)   
