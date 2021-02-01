@@ -56,32 +56,42 @@ function replaceNums(start, end) {
 	}
 }
 
-console.time('replaceNums');
+// console.time('replaceNums');
 replaceNums(1, 100);
-console.timeEnd('replaceNums');
+// console.timeEnd('replaceNums');
 
 
-console.time('Solution #2');
 
-const nums = Array.from({ length: 100 }, (v, i) => i + 1);
-// console.log(nums);
 
-for (const val of nums) {
-	switch (true) {
-		case multipleOf3(val) && multipleOf5(val):
-			console.log('CLXDTC');
-			break;
+/**********
+ 
+function replaceNumsArr(maxLength) {
+	// creates new instance of Array from an array-like (length property / indexed elems) or iterable obj (strings, other arrays)
+	// v (value) is undefined because array was created from "nothing"
+	const numbers = Array.from({ length: maxLength }, (v, i) => i + 1);
 
-		case multipleOf3(val):
-			console.log('CLX');
-			break;
+	for (const num of numbers) {
+		switch (true) {
+			case multipleOf3(num) && multipleOf5(num):
+				console.log('CLXDTC');
+				break;
 
-		case multipleOf5(val):
-			console.log('DTC');
-			break;
+			case multipleOf3(num):
+				console.log('CLX');
+				break;
 
-		default:
-			console.log(val);
+			case multipleOf5(num):
+				console.log('DTC');
+				break;
+
+			default:
+				console.log(num);
+		}
 	}
 }
-console.timeEnd('Solution #2');
+
+console.time('replaceNumsArr');
+replaceNumsArr(100);
+console.timeEnd('replaceNumsArr');
+
+**********/
